@@ -1,0 +1,160 @@
+/*
+colors:
+pink: e42c64;
+blue: 614ad3;
+darkblue: 2d248a;
+night: 121b74;
+*/
+
+
+
+@import "fonts.css";
+body{
+	width: 100%;
+	font-family: OpenSans;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+
+header{
+	width: 1120px;
+	height: 75px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: space-between;
+}
+
+h1{
+	color: #e42c64;
+	font-family: Bebas Neue;
+	font-size: 42px;
+}
+
+form label{
+	font-size: 24px;
+}
+
+.textfolder, .timername{
+	font-family: OpenSans;
+	font-size: 18px;
+    margin: 0;
+    padding: 5px;
+    background: none; 
+	width: 150px;
+    height: 30px;
+    border: 1px solid #121b74;
+}
+
+.timername{
+	width: 200px;
+}
+
+.button{
+	font-family: OpenSans;
+	font-size: 18px;
+    margin: 0;
+    background: none;
+	width: 150px;
+    height: 30px;
+    border: 1px solid #121b74;
+	cursor: pointer;
+}
+
+.button:hover{
+	background: #e42c64;
+	color: #fff;
+    border: 1px solid transparent;
+}
+
+#input{
+	border-color: #e42c64;
+}
+
+.timerControl{
+	width: 1120px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+}
+
+h2{
+	font-size: 32px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.allTimersh2{
+	margin-top: 50px;
+}
+
+.allTimersBlock{
+	height: 325px;
+	overflow-x: scroll;
+}
+
+/* хром, сафари */
+.allTimersBlock::-webkit-scrollbar { width: 0; }
+
+/* ie 10+ */
+.allTimersBlock { -ms-overflow-style: none; }
+
+/* фф (свойство больше не работает, других способов тоже нет)*/
+.allTimersBlock { overflow: -moz-scrollbars-none; }
+
+.allTimers{
+	width: 1120px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column-reverse;
+	-moz-flex-direction: column-reverse;
+	-ms-flex-direction: column-reverse;
+	-o-flex-direction: column-reverse;
+	flex-direction: column-reverse;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.allTimers fieldset{
+	margin-bottom: 5px;
+}
+
+.links{
+	width: 500px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.linkButton{
+	width: 200px;
+	height: 50px;
+}

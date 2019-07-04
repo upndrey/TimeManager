@@ -1,0 +1,78 @@
+@import "fonts.css";
+
+.body{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.block{
+	border: 1px solid #121b74;
+	width: 450px;
+	height: 500px;
+	font-family: OpenSans;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+	border-radius: 15px;
+	color: #121b74;
+}
+
+h1{
+	color: #e42c64;
+	font-family: Bebas Neue;
+	font-size: 48px;
+	margin-bottom: 10px;
+}
+
+.form-block{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 5px;
+}
+
+.push{
+	font-family: OpenSans;
+	font-size: 24px;
+	display: block;
+    margin: auto;
+    padding: 0;
+    background: none;
+    position: relative;    
+	width: 250px;
+    height: 45px;
+    border: 1px solid #121b74;
+	margin-top: 15px;
+	cursor: pointer;
+}
+
+.push:hover{
+	background: #e42c64;
+	color: #fff;
+    border: 1px solid transparent;
+}
+
+.out{
+	display: block;
+	text-align: center;
+	margin-top: 5px;
+}

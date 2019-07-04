@@ -1,0 +1,26 @@
+
+<html>
+<head>
+    <title>Регистрация</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/registration.css">
+</head>
+<body class="body">
+    <div class="block">
+        <h1>Регистрация</h1>
+        <form action="addUser" method="POST">
+            <div class="form-block">    
+                <label>Имя</label>
+                <input name="name" />
+            </div>
+            <div class="form-block">
+                <label>Пароль</label>
+                <input name="password" type="password"/>
+            </div>            
+            <input class="push" type="submit" value="Зарегистрироваться" />
+            <a class="out" href="./login">Вход</a>
+        </form>
+    </div>
+</body>
+<html>

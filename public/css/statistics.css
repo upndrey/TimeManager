@@ -1,0 +1,138 @@
+@import "fonts.css";
+
+body{
+	width: 100%;
+	font-family: OpenSans;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: flex-start;
+	overflow: hidden;
+}
+
+
+header{
+	width: 1120px;
+	height: 75px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: space-between;
+}
+
+h1{
+	color: #e42c64;
+	font-family: Bebas Neue;
+	font-size: 42px;
+}
+
+.statsBlock{
+	margin-top: 25px;
+	width: 1120px;
+	height: 450px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: flex-start;
+	overflow-x: scroll;
+}
+
+/* хром, сафари */
+.statsBlock::-webkit-scrollbar { width: 0; }
+
+/* ie 10+ */
+.statsBlock { -ms-overflow-style: none; }
+
+/* фф (свойство больше не работает, других способов тоже нет)*/
+.statsBlock { overflow: -moz-scrollbars-none; }
+
+.oneStat{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	-moz-flex-direction: row;
+	-ms-flex-direction: row;
+	-o-flex-direction: row;
+	flex-direction: row;
+}
+
+.colNames{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+}
+
+.colName{
+	font-size: 24px;
+	width: 300px;
+	display: block;
+	text-align: center;
+}
+
+.stats:nth-child(odd){
+	width: 300px;	
+	border-right: 1px solid #121b74;
+	margin-bottom: 5px;
+	font-size: 24px;
+}
+
+.stats:nth-child(even){
+	text-align: center;
+	width: 300px;	
+	font-size: 24px;
+}
+
+form label{
+	font-size: 24px;
+}
+
+.button{
+	font-family: OpenSans;
+	font-size: 18px;
+    margin: 0;
+    background: none;
+	width: 150px;
+    height: 30px;
+    border: 1px solid #121b74;
+	cursor: pointer;
+}
+
+.button:hover{
+	background: #e42c64;
+	color: #fff;
+    border: 1px solid transparent;
+}
+
+
+.linkButton{
+	width: 200px;
+	height: 50px;
+}

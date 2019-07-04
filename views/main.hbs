@@ -1,0 +1,140 @@
+<html>
+<head>
+    <title>Главная страница</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<script type="text/javascript">
+
+var init=0;
+var startDate;
+var clocktimer;
+
+function countTIMER(dateofstart, dateofend) {
+
+    if(dateofstart != "" && dateofend != ""){
+        var separator = /[.: ]/g;
+
+        var start = dateofstart.split(separator);
+        var end = dateofend.split(separator);
+
+        var startDate = new Date(start[2], start[1] - 1, start[0], start[3], start[4], start[5]);
+        var endDate = new Date(end[2], end[1] - 1, end[0], end[3], end[4], end[5]);
+
+        var t = endDate.getTime() - startDate.getTime();
+        t = Math.floor (t/1000);
+        var s = t%60; t-=s;
+        t = Math.floor (t/60);
+        var m = t%60; t-=m;
+        t = Math.floor (t/60);
+        var h = t%60;
+        if (h<10) h='0'+h;
+        if (m<10) m='0'+m;
+        if (s<10) s='0'+s;
+        document.write("<input class='textfolder' name='clock' size='12' maxlength='12' value='"+ h + ':' + m + ':' + s + "' disabled>");
+    }
+}
+
+function startTIME() {
+    var temp = `
+        {{#each timers}}
+            {{#if this.dateofend}}
+
+            {{else}}
+                {{this.dateofstart}}
+            {{/if}}
+        {{/each}}`;
+    temp = temp.trim();
+    if(temp != ""){
+        var separator = /[.: ]/g;
+
+        var date = temp.split(separator);
+        var thisDate = new Date();
+        startDate = new Date(date[2], date[1] - 1, date[0], date[3], date[4], date[5]);
+        var t = thisDate.getTime() - startDate.getTime();
+        t = Math.floor (t/1000);
+        var s = t%60; t-=s;
+        t = Math.floor (t/60);
+        var m = t%60; t-=m;
+        t = Math.floor (t/60);
+        var h = t%60;
+        if (h<10) h='0'+h;
+        if (m<10) m='0'+m;
+        if (s<10) s='0'+s;
+        if (init==1) document.clockform.clock.value = h + ':' + m + ':' + s;
+        clocktimer = setTimeout("startTIME()",10);
+    }
+}
+
+function findTIME() {
+    startDate = new Date();
+    startTIME();
+    init=1;
+}
+
+findTIME();
+</script>   
+    <header>
+        <h1>Главная страница</h1>
+        <form action="logout" method="POST">
+            <label>{{user}}</label>
+            <input class="button" type="submit" value="Выход" />
+        </form>
+    </header>
+    <div class="timerControl">
+        <div class="control-block">
+            <h2>Добавить новый:</h2>
+            <form action="addTimer" method="POST">
+                <input id="input" class="timername" name="timerName" />
+                <input class="textfolder" name="clock" size="12" maxlength="12" value="00:00:00" disabled>
+                <input class="button" type="submit" value="Создать"/>
+            </form>
+        </div>
+
+        <div class="control-block">
+            <h2>Текущий таймер:</h2>
+            <form action="stopTimer" method="POST" name="clockform"> 
+                <script type="text/javascript">
+                    var temp = `
+                        {{#each timers}}
+                            {{#if this.dateofend}}
+                            {{else}}
+                                {{this.timername}}
+                            {{/if}}
+                        {{/each}}`;
+                    temp = temp.trim();
+                    document.write("<input class='timername' name='timername' value='"+ temp + "' disabled/>");
+                </script>
+                <input class="textfolder" name="clock" size="12" maxlength="12" value="00:00:00" disabled>
+                <input class="button" type="submit" value="Выключить"/>
+            </form>
+        </div>
+        
+    </div>
+    <h2 class="allTimersh2">Список таймеров:</h2>
+    <div class="allTimersBlock">
+        <form class = "allTimers" action="startTimer" method="POST">
+            {{#each timers}}
+                {{#if this.dateofend}}
+                    <fieldset>
+                        <input class="timername" name="timername" value="{{timername}}" disabled />
+                        <script>countTIMER("{{this.dateofstart}}", "{{dateofend}}");</script>
+                        <input class="button" name="{{timername}}" type="submit" value="Включить"/>
+                    </fieldset>
+                {{/if}}
+            {{/each}}
+        </form>
+    </div>
+    
+    <div class="links">
+        <form action="deleteTimers" method="POST">
+            <input class="button linkButton" type="submit" value="Удалить таймеры" />
+        </form>
+        <form action="statistics" method="POST">
+            <input class="button linkButton" type="submit" value="Открыть статистику" />
+        </form>
+    </div> 
+</body>
+<html>
